@@ -3,11 +3,11 @@ class Solution:
         if len(nums)==1:
             return nums[0]
         i=len(nums)
-        res=nums[:]
+        
         while(i>1):
-            res=self.fill(res)
+            nums=self.fill(nums)
             i=i/2
-        return res[0]
+        return nums[0]
     def fill(self,root):
         arr=[]
         x=int(len(root)/2)
