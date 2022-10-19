@@ -11,7 +11,11 @@ class Solution:
                 return True
             if not (node.val < rbound and node.val > lbound):
                 return False
-            return isValid(node.left,lbound,node.val) and isValid(node.right,node.val,rbound)
+            if not isValid(node.left,lbound,node.val):
+                return False
+            if not isValid(node.right,node.val,rbound):
+                return False
+            return True
         
         return isValid(root,-math.inf,math.inf)
 
