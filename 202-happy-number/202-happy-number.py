@@ -1,14 +1,15 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
         prev=n
-        att={4, 16, 37, 58, 89, 145, 42, 20}
+        att=set()
         while True:
             n=self.square_sum(n)
             if n==1:
                 return True
-            elif n in att:
-                return False
-            prev=n**2
+            elif n not in att:
+                att.add(n)
+                continue    
+            return False
         #print(self.square_sum(n))
     def square_sum(self,num):
         res=0
