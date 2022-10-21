@@ -1,35 +1,17 @@
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
-        res=[[0 for i in range(n)] for _ in range(n)]
-        n=len(res)
-        left,right=0,n-1
-        top,bottom=0,n-1
-        cycle=0
-        count=1
+        matrix = [[0 for col in range(n)] for row in range(n)]
+        directions = [[0,1],[-1,0],[0,-1],[1,0]]
+        isvalid = lambda r,c : 0<=r<n and 0<=c<n and matrix[r][c] == 0 
+        matrix[0][0] = 1
+        r,c = 0,0
+        n_squer = n*n-1
         
-        while (left<=right and top<=bottom):
-            if cycle==0:
-                for i in range(left,right+1):
-                    res[top][i]=count
-                    count+=1
-                top+=1
-                cycle=1
-            elif cycle==1:
-                for i in range(top,bottom+1):
-                    res[i][right]=count
-                    count+=1
-                right-=1
-                cycle=2
-            elif cycle==2:
-                for i in range(right,left-1,-1):
-                    res[bottom][i]=count
-                    count+=1
-                bottom-=1
-                cycle=3
-            elif cycle==3:
-                for i in range(bottom,top-1,-1):
-                    res[i][left]=count
-                    count+=1
-                left+=1
-                cycle=0
-        return res
+        while n_squer:
+            for dr,dc in directions:
+                while isvalid(r+dr,c+dc):
+                    r += dr
+                    c += dc
+                    matrix[r][c] = matrix[r-dr][c-dc]+1
+                    n_squer -= 1
+        return matrix
