@@ -1,4 +1,6 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        return bin(int(a,2)+int(b,2))[2:]
+        x=int(a,2)
+        y=int(b,2)
+        return bin(x+y)[2:]
             
