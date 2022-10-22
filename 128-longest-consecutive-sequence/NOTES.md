@@ -1,1 +1,1 @@
-​
+First get the start of a possible sequence i , by checking that i-1 doesn't exist in the list(set), then for i count the sequences
