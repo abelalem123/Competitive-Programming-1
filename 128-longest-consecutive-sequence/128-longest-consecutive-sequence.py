@@ -4,9 +4,9 @@ class Solution:
         max_count=0
         for i in nums:
             if i-1 not in numset:
-                nextn=i
+                nextn=i+1
                 count=1
-                while (nextn+1 in numset):
+                while nextn in numset:
                     count+=1
                     nextn+=1
                 max_count=max(count,max_count)
