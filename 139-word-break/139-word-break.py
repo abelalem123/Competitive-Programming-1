@@ -6,8 +6,10 @@ class Solution:
             for word in wordDict:
                 temp=i-len(word)
                 if temp>=0 and  s[temp:i]==word:
+                  
                     dp[i]=dp[temp]
                 if dp[i]:
                     break
+       
         return dp[-1]
     
