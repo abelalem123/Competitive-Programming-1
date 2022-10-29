@@ -1,1 +1,2 @@
-​
+to get number of ones you check if the num %2 ==1 then increment count, and decrease the num=num//2  untill it reaches zero.
+But another way you can do this is still check if num%2, and increment count, and add what ever was computed at res[num//2].
