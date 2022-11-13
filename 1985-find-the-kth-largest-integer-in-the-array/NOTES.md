@@ -1,1 +1,1 @@
-​
+use min heap, pop whenever the heap is bigger than k.
