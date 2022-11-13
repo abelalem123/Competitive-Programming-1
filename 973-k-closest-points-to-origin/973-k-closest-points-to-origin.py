@@ -7,13 +7,15 @@ class Solution:
         sort the distance -> 5,20,
         iterate untill k and return corresponding
         """
-        distance={}
-        i=0
-        for x,y in points:
-            distance[i]=x**2+y**2
-            i+=1
-        distance_sorted=sorted(distance.items(),key=lambda a:a[1])
-        res=[]
-        for i in range(k):
-             res.append(points[distance_sorted[i][0]])
-        return res
+        return sorted(points,key=lambda point: point[0]**2+point[1]**2)[:k]
+        
+        # distance={}
+        # i=0
+        # for x,y in points:
+        #     distance[i]=x**2+y**2
+        #     i+=1
+        # distance_sorted=sorted(distance.items(),key=lambda a:a[1])
+        # res=[]
+        # for i in range(k):
+        #      res.append(points[distance_sorted[i][0]])
+        # return res
