@@ -1,0 +1,2 @@
+use monotonic increasing stack, while iterating if you have got a number less than the top of the stack and k is still greater than zero, pop them.
+remember that you have to slice the stack because you might have been given ordered string e.g 12345, you slice up until len(stack)-k
