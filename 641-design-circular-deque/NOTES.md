@@ -1,0 +1,2 @@
+imagine the array as a circular clock, first head,tail position is 0, and head inserts anti-clockwise and tail inserts clockwise,
+remember to update after deletion and if empty make the head tail the same
