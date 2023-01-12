@@ -5,11 +5,10 @@ class Solution:
         numset=set(nums)
         #print(numset)
         for i,j in operations:
-            numset.remove(i)
-            numset.add(j)
             numindex[j]=numindex[i]
             result[numindex[i]]=j
-        #print(numset)
-        for n in numset:
+            del numindex[i]
+
+        for n in numindex:
             result[numindex[n]]=n
         return result
