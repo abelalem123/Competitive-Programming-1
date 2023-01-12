@@ -2,27 +2,7 @@ class Solution:
     def queensAttacktheKing(self, queens: List[List[int]], king: List[int]) -> List[List[int]]:
         table=set(tuple(i) for i in queens)
         good_queens=self.find_nearest_queens(king[0],king[1],table)
-        result=[]
-        for queen_row, queen_col in good_queens:
-            king_row=king[0]
-            king_col=king[1]
-
-            #horizontal
-            if king_row==queen_row:
-                result.append((queen_row,queen_col))
-                continue
-                
-            #vertical
-            elif king_col==queen_col:
-                result.append((queen_row,queen_col))
-                continue
-                
-            #diagonal
-
-            elif  (abs(king_row - queen_row) == abs(king_col - queen_col)):
-                result.append((queen_row,queen_col))
-                continue
-        return result
+        return good_queens
 
     def find_nearest_queens(self,king_row,king_col,table):
         good_queens =set()
