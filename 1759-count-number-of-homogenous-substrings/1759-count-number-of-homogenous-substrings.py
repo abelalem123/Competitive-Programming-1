@@ -6,18 +6,14 @@ class Solution:
         count={}
         l=0
         ans=0
+        prev=''
         for r,c in enumerate(s):
-            if c in count:
-                count[c]+=1
+            if c==prev:
+                count+=1
             else:
-                count[c]=1
-            
-            while len(count)>1:
-                count[s[l]]-=1
-                if count[s[l]]==0:
-                    del count[s[l]]
-                l+=1
-            ans+=r-l+1
+                count=1
+                prev=c
+            ans+=count
         return ans % (10**9 + 7)
         
         
