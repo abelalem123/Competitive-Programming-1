@@ -20,7 +20,6 @@ class Solution:
             left+=1
             total+=arr[right]
             if total/k>=threshold:
-                print(left,right)
                 soln+=1
         
         
