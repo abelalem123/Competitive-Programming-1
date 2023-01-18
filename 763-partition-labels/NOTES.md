@@ -1,1 +1,2 @@
-​
+use two sets first counts remaining characters, and second our window's character, the n if all our characters are not in the remaining characters, we partition at that specific place(using two pointers)l-r+1, then we set l=r+1
+another solution is to use a variable called max_last_pos which denotes the maximum  position of our characters in our window, we then compare it with the last pos of that character in our string, if they are equal we partition it.
