@@ -9,10 +9,8 @@ class Solution:
         
         for col in range(len(strs[0])):
             is_sorted=True
-            first=strs[0][col]
             for row in range(1,len(strs)):
-                is_sorted = is_sorted and first <= strs[row][col]
-                first=strs[row][col]
+                is_sorted = is_sorted and strs[row-1][col] <= strs[row][col]
             if not is_sorted:
                 remove+=1
         return remove
